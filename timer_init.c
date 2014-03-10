@@ -19,7 +19,7 @@ void timer_init(){
 
 	TA0CTL = TASSEL_2 + MC_1 + ID_3; 	// SMCLK, count to CCR0, CLK/8
 
-	TA0R = 0;							// reset TA0 register
+	TA0R = 0;				// reset TA0 register
 
 }
 
@@ -27,15 +27,15 @@ void timer_init(){
 
 void timer_wait(unsigned int t){
 
-	TA0R = 0;						// reset TA0 register
+	TA0R = 0;				// reset TA0 register
 
-	if(t > 1000)					// check if interval is greater than max
-		t = 1000;					// if true, use max value
+	if(t > 1000)				// check if interval is greater than max
+		t = 1000;			// if true, use max value
 
-	t = 65 * t;						// scale time value to counter value by multiply
-	TA0CCR0 = t; 					// START, wait until CCR0 = t;
+	t = 65 * t;				// scale time value to counter value by multiply
+	TA0CCR0 = t; 				// START, wait until CCR0 = t;
 
-	while( TA0R < t ){}				// time lapses, waits for counter to finish
+	while( TA0R < t ){}			// time lapses, waits for counter to finish
 
 
 }
