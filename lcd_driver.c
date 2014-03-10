@@ -52,7 +52,7 @@ void write_data_lcd(char data){
 void write_16bdata_lcd(int data16b){
 
 		write_SPI(data16b >> 8);			// send lower byte
-		write_SPI(data16b);					// send upper byte
+		write_SPI(data16b);				// send upper byte
 
 }
 
@@ -61,9 +61,9 @@ void write_16bdata_lcd(int data16b){
 void write_cmd_lcd(char cmd){				
 
 
-		P2OUT ^= BIT4;						// LCD enable COMMAND (C/D -> LOW)
+		P2OUT ^= BIT4;					// LCD enable COMMAND (C/D -> LOW)
 			write_SPI(cmd);
-		P2OUT ^= BIT4;						// LCD disable COMMAND (C/D -> HIGH)
+		P2OUT ^= BIT4;					// LCD disable COMMAND (C/D -> HIGH)
 
 }
 
@@ -75,11 +75,11 @@ void write_SPI(char i){
 
 		P1OUT ^= BIT5;					// CS -> LOW (active)
 
-		UC0IFG &= ~UCA0RXIFG;			// ready to send
+		UC0IFG &= ~UCA0RXIFG;				// ready to send
 
 		UCA0TXBUF = i;					// send 1 B
 
-		while ((UC0IFG & UCA0RXIFG) == 0) { }	// wait until send is done
+		while ((UC0IFG & UCA0RXIFG) == 0) { }		// wait until send is done
 
 		P1OUT ^= BIT5;					// CS -> HIGH (inactive)
 
@@ -92,13 +92,13 @@ void write_SPI(char i){
 
 void lcd_address_set(uint16 x1,uint16 x2,uint16 y1,uint16 y2)
 {
-		write_cmd_lcd(0x2a); 	// set X limits
-		write_16bdata_lcd(x1);
-		write_16bdata_lcd(x2);
-     	write_cmd_lcd(0x2b); 	// set Y limits
+	write_cmd_lcd(0x2a); 				// set X limits
+	write_16bdata_lcd(x1);
+	write_16bdata_lcd(x2);
+     	write_cmd_lcd(0x2b); 				// set Y limits
      	write_16bdata_lcd(y1);
      	write_16bdata_lcd(y2);
-     	write_cmd_lcd(0x2c);	// write to memory
+     	write_cmd_lcd(0x2c);				// write to memory
 }
 
 /* Filled square drawing function */
