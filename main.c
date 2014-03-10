@@ -5,25 +5,25 @@
  *  Software has been tested under real circumstances. Use this software on your on risk.
  *  Any source code resemblance to the any property of the third party's is purely coincidental.
  *
- *                       			  MSP430G2553
- *                     			   -----------------
- *                			   /|\|              XIN|-
- *                 			    | |                 |
- *                 			    --|RST          XOUT|-
- *                   			  |                 |
- *                   			  |             P1.6|-> LED(GREEN)
- *              			   	  |                 |
- *        			   LED(RED) <-|P1.0             |
- *					  			  |                 |
- *			 Data In (UCA0SOMI) ->|P1.1				|
- *					  			  |					|
- *			Data Out (UCA0SIMO)	<-|P1.2				|
- *					  			  |					|
- *	Serial Clock Out (UCA0CLK) <- |P1.4			P2.4|-> Command/Data
- *					  			  |					|
- *				   Cable Select <-|P1.5         P2.3|-> Slave Reset
- *				   				  |					|
- *				   				   -----------------
+ *                       		  MSP430G2553
+ *                     		       -----------------
+ *                		   /|\|              XIN|-
+ *                 		    | |                 |
+ *                 		    --|RST          XOUT|-
+ *                   		      |                 |
+ *                   		      |             P1.6|-> LED(GREEN)
+ *              	              |                 |
+ *        		   LED(RED) <-|P1.0             |
+ *				      |                 |
+ *		 Data In (UCA0SOMI) ->|P1.1		|
+ *				      |	                |
+ *	     Data Out (UCA0SIMO)    <-|P1.2		|
+ *				      |			|
+ *	Serial Clock Out (UCA0CLK) <- |P1.4	    P2.4|-> Command/Data
+ *				      |			|
+ *		       Cable Select <-|P1.5         P2.3|-> Slave Reset
+ *			              |			|
+ *				       -----------------
  *
  *  SHORT DESCRIPTION:
  *  This source code (program) runs color LCD over the SPI protocol.
