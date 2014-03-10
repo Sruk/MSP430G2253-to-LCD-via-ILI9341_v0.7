@@ -35,23 +35,23 @@
  */
 
 #include <msp430.h>		/*Texas Instruments Inc. CCS5 library*/
-#include "LCD_incl.h" 	/*includes all project header's*/
+#include "LCD_incl.h" 		/*includes all project header's*/
 
 //Basic COMMANDS
 #define DSPLY_OFF 	0x28
 #define DSPLY_ON 	0x29
 
 //Basic Colors
-#define RED 		0xf800
-#define GREEN 		0x07e0
-#define BLUE 		0x001f
+#define RED 		0xF800
+#define GREEN 		0x07E0
+#define BLUE 		0x001F
 #define BLACK 		0x0000
-#define YELLOW 		0xffe0
-#define WHITE 		0xffff
+#define YELLOW 		0xFFE0
+#define WHITE 		0xFFFF
 
 //Other Colors
-#define CYAN		0x07ff
-#define BRIGHT_RED	0xf810
+#define CYAN		0x07FF
+#define BRIGHT_RED	0xF810
 #define GRAY1 		0x8410
 #define GRAY2 		0x4208
 
