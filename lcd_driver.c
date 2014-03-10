@@ -16,16 +16,16 @@
 typedef unsigned int uint16;
 
 //Basic Colors
-#define RED 		0xf800
-#define GREEN 		0x07e0
-#define BLUE 		0x001f
+#define RED 		0xF800
+#define GREEN 		0x07E0
+#define BLUE 		0x001F
 #define BLACK 		0x0000
-#define YELLOW 		0xffe0
-#define WHITE 		0xffff
+#define YELLOW 		0xFFE0
+#define WHITE 		0xFFFF
 
 //Other Colors
-#define CYAN		0x07ff
-#define BRIGHT_RED	0xf810
+#define CYAN		0x07FF
+#define BRIGHT_RED	0xF810
 #define GRAY1 		0x8410
 #define GRAY2 		0x4208
 
@@ -92,13 +92,13 @@ void write_SPI(char i){
 
 void lcd_address_set(uint16 x1,uint16 x2,uint16 y1,uint16 y2)
 {
-	write_cmd_lcd(0x2a); 				// set X limits
+	write_cmd_lcd(0x2A); 				// set X limits
 	write_16bdata_lcd(x1);
 	write_16bdata_lcd(x2);
-     	write_cmd_lcd(0x2b); 				// set Y limits
+     	write_cmd_lcd(0x2B); 				// set Y limits
      	write_16bdata_lcd(y1);
      	write_16bdata_lcd(y2);
-     	write_cmd_lcd(0x2c);				// write to memory
+     	write_cmd_lcd(0x2C);				// write to memory
 }
 
 /* Filled square drawing function */
