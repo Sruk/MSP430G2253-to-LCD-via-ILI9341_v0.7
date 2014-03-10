@@ -50,8 +50,8 @@ void init_ILI9340C(void)
 	write_cmd_lcd(0xED);			// Power On Sequence CTRL
 	        write_data_lcd(0x55);		// soft start time in 2B 0x(I)(II) by values: longest 4, long 5, short 6, off 7
 	        write_data_lcd(0x03);		// frame enable in 2B 0x(I)(II) by values: 0, 1, 2, 3
-	        write_data_lcd(0X12);		// frame enable in 2B 0x(I)(II) by values: 0, 1, 2, 3
-	        write_data_lcd(0X81);		// DVDDH enhance: disable 0x01, enable 0x81
+	        write_data_lcd(0x12);		// frame enable in 2B 0x(I)(II) by values: 0, 1, 2, 3
+	        write_data_lcd(0x81);		// DVDDH enhance: disable 0x01, enable 0x81
 
 	write_cmd_lcd(0xF7);			// Pump Ratio CTRL
 	        write_data_lcd(0x20);		// DVDDH voltage multiplier: times two 0x20, times three 3 0x30
@@ -130,7 +130,7 @@ void set_gamma(void){
 		write_data_lcd(0x09);
 		write_data_lcd(0x00);
 
-	write_cmd_lcd(0XE1);    		//Set Negative Gamma
+	write_cmd_lcd(0xE1);    		//Set Negative Gamma
 		write_data_lcd(0x00);
 		write_data_lcd(0x0E);
 		write_data_lcd(0x14);
